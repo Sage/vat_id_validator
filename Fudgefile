@@ -1,0 +1,5 @@
+build :default do
+  yard 'stats --list-undoc -q', :coverage => 100
+  cane :max_width => 200
+  rspec :coverage => 100
+end
