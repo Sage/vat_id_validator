@@ -1,29 +1,7 @@
 # encoding: UTF-8
 require 'spec_helper'
-require 'active_model/naming'
-require 'active_model/errors'
-require 'active_model/translation'
-require 'active_model/validations'
-
 
 describe ActiveModel::Validations::VatIdValidator do
-  class ActiveModelTestClass
-    extend ActiveModel::Naming
-    extend ActiveModel::Translation
-    include ActiveModel::Validations
-
-    def initialize
-      @errors = ActiveModel::Errors.new(self)
-    end
-
-    attr_accessor :tax_number
-    validates :tax_number, :vat_id => true
-
-    def self.name
-      'ActiveModelTestClass'
-    end
-  end
-
   subject { ActiveModelTestClass.new }
 
   shared_examples_for 'tax_number with 8 digits' do

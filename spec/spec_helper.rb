@@ -17,3 +17,4 @@ RSpec.configure do |config|
 end
 
 require 'vat_id_validator'
+require 'support/active_model_test_class'
