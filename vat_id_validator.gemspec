@@ -17,8 +17,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = %w[lib]
 
-  gem.add_dependency 'activemodel'
+  gem.add_dependency 'activemodel', '~>3.2.12'
 
+  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'yard'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'cane'
