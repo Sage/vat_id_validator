@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe RSpec::Matchers::ValidateVatIdOf do
+describe VatIdValidator::Matchers::ValidateVatIdOf do
 
   before(:all) do
     @expected = :tax_number
-    @matcher = RSpec::Matchers::ValidateVatIdOf.new(@expected)
+    @matcher  = described_class.new(@expected)
   end
 
   describe 'validate_vat_id_of' do
@@ -12,7 +12,7 @@ describe RSpec::Matchers::ValidateVatIdOf do
       self.respond_to?(:validate_vat_id_of).should be_true
     end
 
-    it 'should be a "RSpec::Matchers::ValidateVatIdOf"' do
+    it 'should be a "VatIdValidator::Matchers::ValidateVatIdOf"' do
       self.validate_vat_id_of(:anything).should be_a(described_class)
     end
   end
@@ -27,7 +27,7 @@ describe RSpec::Matchers::ValidateVatIdOf do
     end
 
     describe 'with a invalid match' do
-      subject { RSpec::Matchers::ValidateVatIdOf.new(:other_attribute) }
+      subject { described_class.new(:other_attribute) }
 
       it 'should not matches the validation' do
         subject.matches?(ActiveModelTestClass.new).should be_false

@@ -1,4 +1,4 @@
-module RSpec # :nodoc:
+module VatIdValidator # :nodoc:
   module Matchers # :nodoc:
     # Ensure that the attribute is a vat id.
     #
