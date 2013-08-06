@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = %q(http://github.com/Sage/vat_id_validator)
   gem.description   = %q{VAT-ID validator based on ActiveModel::EachValidator}
   gem.summary       = %q{VAT-ID validator}
+  gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
