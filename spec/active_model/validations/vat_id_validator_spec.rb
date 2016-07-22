@@ -586,13 +586,13 @@ describe ActiveModel::Validations::VatIdValidator do
     context 'IE (Ireland)' do
       let(:prefix) { 'IE' }
   
-      it 'should be valid with 1 digit + 1 char + 5 digets + 1 char' do
-        subject.tax_number = prefix + '1X12345L'
+      it 'should be valid with 1 digit + 1 char + 5 digets + 2 char' do
+        subject.tax_number = prefix + '1X12345LT'
         expect(subject).to be_valid
       end
   
-      it 'should be valid with 7 digits + 1 char' do
-        subject.tax_number = prefix + '1234567L'
+      it 'should be valid with 7 digits + 2 char' do
+        subject.tax_number = prefix + '1234567LS'
         expect(subject).to be_valid
       end
   
@@ -600,7 +600,12 @@ describe ActiveModel::Validations::VatIdValidator do
         subject.tax_number = prefix + '12345678'
         expect(subject).not_to be_valid
       end
-  
+
+      it 'should be valid with 7 digits + 1 char' do
+        subject.tax_number = prefix + '1234567L'
+        expect(subject).not_to be_valid
+      end
+
       it 'should not be valid with less then 7 digits + 1 char' do
         subject.tax_number = prefix + '123456L'
         expect(subject).not_to be_valid
