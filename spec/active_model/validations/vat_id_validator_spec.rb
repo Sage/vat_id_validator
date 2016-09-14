@@ -590,19 +590,19 @@ describe ActiveModel::Validations::VatIdValidator do
         subject.tax_number = prefix + '1X12345LT'
         expect(subject).to be_valid
       end
-  
+
+      it 'should be valid with 7 digits + 1 char' do
+        subject.tax_number = prefix + '1234567L'
+        expect(subject).to be_valid
+      end
+
       it 'should be valid with 7 digits + 2 char' do
         subject.tax_number = prefix + '1234567LS'
         expect(subject).to be_valid
       end
-  
+
       it 'should not be valid if last is not a char' do
         subject.tax_number = prefix + '12345678'
-        expect(subject).not_to be_valid
-      end
-
-      it 'should not be valid with 7 digits + 1 char' do
-        subject.tax_number = prefix + '1234567L'
         expect(subject).not_to be_valid
       end
 
