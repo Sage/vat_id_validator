@@ -16,7 +16,7 @@ class ActiveModelTestClass
   end
 
   attr_accessor :tax_number, :other_attribute
-  validates :tax_number, :vat_id => true
+  validates :tax_number, vat_id: true
 
   def self.name
     'ActiveModelTestClass'

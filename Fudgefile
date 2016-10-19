@@ -1,4 +1,5 @@
 build :default do
+  shell 'bundle exec rubocop --format simple'
   yard 'stats --list-undoc -q', :coverage => 100
   cane :max_width => 200
   rspec :coverage => 100

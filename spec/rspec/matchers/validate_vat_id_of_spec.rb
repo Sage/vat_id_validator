@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe VatIdValidator::Matchers::ValidateVatIdOf do
-
   before(:all) do
     @expected = :tax_number
     @matcher  = described_class.new(@expected)
@@ -9,11 +8,11 @@ describe VatIdValidator::Matchers::ValidateVatIdOf do
 
   describe 'validate_vat_id_of' do
     it 'should be a rspec matcher' do
-      expect(self.respond_to?(:validate_vat_id_of)).to be_truthy
+      expect(respond_to?(:validate_vat_id_of)).to be_truthy
     end
 
     it 'should be a "VatIdValidator::Matchers::ValidateVatIdOf"' do
-      expect(self.validate_vat_id_of(:anything)).to be_a(described_class)
+      expect(validate_vat_id_of(:anything)).to be_a(described_class)
     end
   end
 
@@ -50,6 +49,6 @@ describe VatIdValidator::Matchers::ValidateVatIdOf do
   describe '#description' do
     subject { @matcher.description }
 
-    it { is_expected.to eq("be a vat id") }
+    it { is_expected.to eq('be a vat id') }
   end
 end
