@@ -21,7 +21,7 @@ module VatIdValidator # :nodoc:
       # @return [boolean]
       def matches?(actual)
         validators = actual._validators[@expected]
-        validators.select { |val| val.kind_of?(ActiveModel::Validations::VatIdValidator) }.count > 0
+        validators.select { |val| val.is_a?(ActiveModel::Validations::VatIdValidator) }.count > 0
       end
 
       # Returns a error message for should matches
@@ -42,7 +42,7 @@ module VatIdValidator # :nodoc:
       #
       # @return [String] the description
       def description
-        "be a vat id"
+        'be a vat id'
       end
     end
   end

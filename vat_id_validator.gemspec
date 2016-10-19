@@ -4,19 +4,19 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'vat_id_validator/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "vat_id_validator"
+  gem.name          = 'vat_id_validator'
   gem.version       = VatIdValidator::VERSION
-  gem.authors       = %q(Sage One team)
-  gem.email         = %q(support@sageone.com)
-  gem.homepage      = %q(http://github.com/Sage/vat_id_validator)
-  gem.description   = %q{VAT-ID validator based on ActiveModel::EachValidator}
-  gem.summary       = %q{VAT-ID validator}
+  gem.authors       = 'Sage One team'
+  gem.email         = 'support@sageone.com'
+  gem.homepage      = 'http://github.com/Sage/vat_id_validator'
+  gem.description   = 'VAT-ID validator based on ActiveModel::EachValidator'
+  gem.summary       = 'VAT-ID validator'
   gem.license       = 'MIT'
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
+  gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = %w[lib]
+  gem.require_paths = %w(lib)
 
   gem.add_dependency 'activemodel', '>= 3.2'
 
@@ -25,6 +25,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'cane'
   gem.add_development_dependency 'simplecov'
+  gem.add_development_dependency 'rubocop'
   gem.add_development_dependency 'redcarpet'
   gem.add_development_dependency 'fudge'
   gem.add_development_dependency 'rb-fsevent'
