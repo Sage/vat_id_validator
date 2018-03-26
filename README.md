@@ -1,6 +1,8 @@
 # Vat-Id validator
 
 [![Build Status](https://travis-ci.org/Sage/vat_id_validator.svg?branch=master)](https://travis-ci.org/Sage/vat_id_validator)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e6e4ca2f4aa130f83d59/maintainability)](https://codeclimate.com/github/Sage/vat_id_validator/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e6e4ca2f4aa130f83d59/test_coverage)](https://codeclimate.com/github/Sage/vat_id_validator/test_coverage)
 
 A validator for VAT-ID based on ActiveModel::EachValidator.
 
