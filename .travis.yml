@@ -1,0 +1,23 @@
+language: ruby
+rvm:
+  - 2.3.4
+  - 2.0.0
+env:
+  global:
+    secure: PWZKSqaXvO1FwGRExTmOCvcIVyCUlk+CkwbDKKzKi/YGfFtecf04TiU1f85t9YNPzjgtORswNcVVRSDPV0JzoROcyhVCnvdfv8hL30cI7P25/0nLt4lu03662APXzVJdb8gWWVGU8FUMtSkRYChoHgugulU9/9tN9qC08N5mapc=
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+    > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
+after_script:
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+deploy:
+  provider: rubygems
+  api_key:
+    secure: Vm0QKHUAJEW8LS8RtAlQODLW3HCs2fTyRkrieexbz0PkXZ/mxQbx7UTlu90b4OrUqgA+EcX/r2O3WKC4uDv7bIGhtmX462YsNHhqKM19IJMJb+/IEMKn8qjlyUz37FF5M1hfWsE6XnHN/Qh92MVLK02T4utVY9Prc3OBVS9V024=
+  gem: vat_id_validator
+  on:
+    tags: true
+    repo: Sage/vat_id_validator
+    condition: "$TRAVIS_RUBY_VERSION == 2.3.4"
